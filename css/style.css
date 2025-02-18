@@ -1,0 +1,413 @@
+/*GENERAL */
+:root {
+  --tri-width: 12px;
+  --tri-height: calc(var(--tri-width) / 2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: white;
+  background: black;
+}
+
+html {
+  font-family: "Cotham";
+  width: 100%;
+  height: 100%;
+  scrollbar-color: #ccc #111;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: black;
+  font-weight: 600;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.site-container {
+  position: relative;
+  float: none;
+  margin: auto;
+  height: fit-content;
+  padding: 0px 2px;
+  max-width: 1600px;
+}
+
+/* HEADER*/
+
+header {
+  position: sticky;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  z-index: 10;
+  background: white;
+}
+
+header a {
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.logo a {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.logo a:hover {
+  color: gray;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transition: 0.5s ease;
+  background-color: white;
+}
+
+.menu-section {
+  display: block;
+  padding: 10px 0px 10px 20px;
+}
+
+.menu-section a {
+  color: gray;
+}
+
+.menu-section a:hover {
+  color: #000000;
+}
+
+.menu-section a.active {
+  color: #000000;
+}
+
+.hamburguer {
+  position: relative;
+  width: 22px;
+  height: 3px;
+  border-radius: 5px;
+  background: black;
+  transition: 0.2s ease;
+}
+
+.hamburguer:before,
+.hamburguer:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  right: 0;
+  border-radius: 5px;
+  background: black;
+}
+
+.hamburguer:before {
+  top: -7px;
+  width: 22px;
+  transition: 0.2s ease;
+}
+
+.hamburguer:after {
+  top: 7px;
+  width: 22px;
+  transition: 0.2s ease;
+}
+
+.hamburguer,
+.toggle-menu {
+  display: none;
+}
+
+.toggle-menu {
+  margin: 0;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  opacity: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+
+nav input:checked ~ .hamburguer {
+  background: transparent;
+}
+
+nav input:checked ~ .menu {
+  right: 0px;
+}
+
+nav input:checked ~ .hamburguer:before {
+  top: 0;
+  width: 24px;
+  height: 4px;
+  transform: rotate(45deg);
+}
+
+nav input:checked ~ .hamburguer:after {
+  top: 0;
+  width: 24px;
+  height: 4px;
+  transform: rotate(-45deg);
+}
+
+/* MAIN  */
+main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-section {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  width: 33.333%;
+  height: calc(100vh - 80px);
+
+  border-radius: 15px;
+  border: 3px solid white;
+
+  background-color: lightgray;
+  font-family: "Poppins";
+}
+
+.portfolio-section-cover {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-section-title {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 2px 2px 10px black;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  color: #ffffff;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.portfolio-section:hover .portfolio-section-title {
+  opacity: 0;
+}
+
+/* PROJECT */
+
+.project-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid #ffffff;
+  background-color: lightgray;
+  overflow: hidden;
+}
+
+.large-image {
+  flex-basis: 66.66%;
+  aspect-ratio: 2/1;
+}
+
+.small-image {
+  flex-basis: 33.33%;
+  aspect-ratio: 1/1;
+}
+
+.project-description {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+/* INFO */
+.info-section {
+  display: block;
+  position: relative;
+  width: 800px;
+  margin: auto;
+  padding: 0px 15px;
+}
+
+#about-image {
+  border-radius: 50%;
+  border: 3px solid black;
+  max-width: 250px;
+  margin: auto;
+  display: block;
+  position: relative;
+}
+
+/* FOOTER  */
+
+footer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+footer a {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: none;
+  color: black;
+}
+
+footer a:hover {
+  color: gray;
+}
+
+.footer-nav-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+}
+
+.triangle-left {
+  width: var(--tri-width);
+  height: var(--tri-width);
+  border-top: var(--tri-height) solid transparent;
+  border-right: var(--tri-width) solid;
+  border-bottom: var(--tri-height) solid transparent;
+}
+
+.triangle-right {
+  width: var(--tri-width);
+  height: var(--tri-width);
+  border-top: var(--tri-height) solid transparent;
+  border-left: var(--tri-width) solid;
+  border-bottom: var(--tri-height) solid transparent;
+}
+
+hr {
+  border-top: 1px solid black;
+  margin: 4px 0px;
+}
+
+/* MEDIA QUERY */
+
+/* phone  */
+@media (max-width: 915px) {
+  .portfolio-section {
+    width: 100%;
+    height: calc((100vh - 80px) / 3);
+  }
+  .large-image,
+  .small-image {
+    flex-basis: 100%;
+  }
+  footer a {
+    font-size: 14px;
+  }
+
+  .footer-nav-section {
+    gap: 5px;
+  }
+
+  :root {
+    --tri-width: 12px;
+  }
+}
+
+/* phone portrait mode  */
+@media (max-height: 450px) {
+  .portfolio-section:nth-child(4n + 1) {
+    clear: none;
+  }
+  .portfolio-section {
+    width: 33.333%;
+    height: calc(100vh - 80px);
+    font-size: 25px;
+  }
+
+  .portfolio-section-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    overflow-x: hidden;
+  }
+  .hamburguer,
+  .toggle-menu {
+    display: block;
+  }
+
+  .menu {
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu a {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: "Poppins", serif;
+  }
+
+  .menu-section {
+    flex-basis: 10%;
+  }
+
+  #language {
+    flex-basis: 50%;
+    align-content: end;
+  }
+
+  #language a {
+    font-size: 15px;
+  }
+}
