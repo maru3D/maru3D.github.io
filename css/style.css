@@ -273,7 +273,7 @@ main {
   }
 
   .menu a {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -282,8 +282,12 @@ main {
     flex-basis: 10%;
   }
 
+  .project-description p {
+    font-size: 14px;
+  }
+
   p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .medium-image {
