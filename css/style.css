@@ -14,7 +14,8 @@
 }
 
 html {
-  font-family: "Cotham";
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell,
+    Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   width: 100%;
   height: 100%;
   scrollbar-color: #ccc #111;
@@ -41,7 +42,7 @@ p {
   margin: auto;
   height: fit-content;
   padding: 0px 2px;
-  max-width: 1600px;
+  max-width: 800px;
 }
 
 /* HEADER*/
@@ -60,14 +61,14 @@ header {
 }
 
 header a {
-  font-size: 15px;
-  font-weight: 900;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
 }
 
 .logo a {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: black;
 }
 
@@ -184,80 +185,41 @@ main {
   height: 100%;
 }
 
-.portfolio-section {
-  display: block;
-  position: relative;
-  overflow: hidden;
-
-  width: 33.333%;
-  height: calc(100vh - 80px);
-
-  border-radius: 15px;
-  border: 3px solid white;
-
-  background-color: lightgray;
-  font-family: "Poppins";
-}
-
-.portfolio-section-cover {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.portfolio-section-title {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-shadow: 2px 2px 10px black;
-  width: 100%;
-  height: 100%;
-  font-size: 40px;
-  color: #ffffff;
-  opacity: 1;
-  transition: opacity 0.4s;
-}
-
-.portfolio-section:hover .portfolio-section-title {
-  opacity: 0;
-}
-
 /* PROJECT */
-
-.project-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-}
 
 .project-image {
   display: block;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 6px;
   border: 3px solid #ffffff;
-  background-color: lightgray;
+  background-color: white;
   overflow: hidden;
 }
 
+.extra-large-image {
+  flex-basis: 100%;
+  aspect-ratio: 1/1;
+}
+
 .large-image {
-  flex-basis: 66.66%;
+  flex-basis: 100%;
+  aspect-ratio: 2/1;
+}
+
+.medium-image {
+  flex-basis: 66.6%;
   aspect-ratio: 2/1;
 }
 
 .small-image {
-  flex-basis: 33.33%;
+  flex-basis: 33.3%;
   aspect-ratio: 1/1;
 }
 
 .project-description {
   display: block;
   width: 100%;
-  padding: 10px 10px;
+  padding: 0px 10px 15px 10px;
 }
 
 /* INFO */
@@ -269,85 +231,13 @@ main {
   padding: 0px 15px;
 }
 
-#about-image {
-  border-radius: 50%;
-  border: 3px solid black;
-  max-width: 250px;
-  margin: auto;
-  display: block;
-  position: relative;
-}
-
-/* FOOTER  */
-
-footer {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 60px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px;
-}
-
-footer a {
-  font-family: "Poppins";
-  font-size: 15px;
-  font-weight: 300;
-  text-decoration: none;
-  color: black;
-}
-
-footer a:hover {
-  color: gray;
-}
-
-.footer-nav-section {
-  display: flex;
-  position: relative;
-  align-items: center;
-  gap: 10px;
-}
-
-.triangle-left {
-  width: var(--tri-width);
-  height: var(--tri-width);
-  border-top: var(--tri-height) solid transparent;
-  border-right: var(--tri-width) solid;
-  border-bottom: var(--tri-height) solid transparent;
-}
-
-.triangle-right {
-  width: var(--tri-width);
-  height: var(--tri-width);
-  border-top: var(--tri-height) solid transparent;
-  border-left: var(--tri-width) solid;
-  border-bottom: var(--tri-height) solid transparent;
-}
-
-hr {
-  border-top: 1px solid black;
-  margin: 4px 0px;
-}
-
 /* MEDIA QUERY */
 
 /* phone  */
 @media (max-width: 915px) {
-  .portfolio-section {
-    width: 100%;
-    height: calc((100vh - 80px) / 3);
-  }
   .large-image,
   .small-image {
     flex-basis: 100%;
-  }
-  footer a {
-    font-size: 14px;
-  }
-
-  .footer-nav-section {
-    gap: 5px;
   }
 
   :root {
@@ -357,17 +247,8 @@ hr {
 
 /* phone portrait mode  */
 @media (max-height: 450px) {
-  .portfolio-section:nth-child(4n + 1) {
-    clear: none;
-  }
-  .portfolio-section {
-    width: 33.333%;
-    height: calc(100vh - 80px);
-    font-size: 25px;
-  }
-
-  .portfolio-section-title {
-    font-size: 22px;
+  .small-image {
+    flex-basis: 33.33333%;
   }
 }
 
@@ -392,22 +273,21 @@ hr {
   }
 
   .menu a {
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 700;
     text-transform: uppercase;
-    font-family: "Poppins", serif;
   }
 
   .menu-section {
     flex-basis: 10%;
   }
 
-  #language {
-    flex-basis: 50%;
-    align-content: end;
+  p {
+    font-size: 12px;
   }
 
-  #language a {
-    font-size: 15px;
+  .medium-image {
+    flex-basis: 100%;
+    aspect-ratio: 2/1;
   }
 }
