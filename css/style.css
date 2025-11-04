@@ -185,6 +185,10 @@ main {
   height: 100%;
 }
 
+p#skills {
+  text-align: center;
+}
+
 /* PROJECT */
 
 .project-image {
