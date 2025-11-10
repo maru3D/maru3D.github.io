@@ -235,6 +235,13 @@ p#skills {
   padding: 0px 15px;
 }
 
+#info-img {
+  display: block;
+  margin: auto;
+  max-height: 250px;
+  max-width: 250px;
+}
+
 /* MEDIA QUERY */
 
 /* phone  */
